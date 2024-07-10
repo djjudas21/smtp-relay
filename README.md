@@ -17,8 +17,9 @@ This image supports the following enironment variables. All are **required**.
 | `SMTP_RELAY_PASSWORD`      | Password for upstream SMTP relay server                             | `pAsSwOrD`                |
 | `SMTP_RELAY_MYHOSTNAME`    | Hostname of this SMTP relay                                         | `smtp-relay.yourhost.com` |
 | `SMTP_RELAY_MYNETWORKS`    | Comma-separated list of local networks that can use this SMTP relay | `127.0.0.0/8,10.0.0.0/8`  |
-| `SMTP_RELAY_WRAPPERMODE`   | Request postfix connects using SUBMISSIONS/SMTPS protocol instead of STARTTLS | `no`                      |
+| `SMTP_RELAY_WRAPPERMODE`   | Request postfix connects using SUBMISSIONS/SMTPS protocol instead of STARTTLS | `no`            |
 | `SMTP_TLS_SECURITY_LEVEL`  | default SMTP TLS security level for the Postfix SMTP client         | `""`                      |
+| `SMTP_USE_TLS`             | Define TLS usage to secure communication between mail servers       | `no`                      |
 
 # Quickstart
 Run on docker
