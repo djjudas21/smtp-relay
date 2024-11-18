@@ -17,6 +17,7 @@ postmap /etc/postfix/sasl/sasl_passwd || exit 1
 postconf 'smtp_sasl_auth_enable = yes' || exit 1
 postconf 'smtp_sasl_password_maps = lmdb:/etc/postfix/sasl/sasl_passwd' || exit 1
 postconf 'smtp_sasl_security_options =' || exit 1
+postconf "smtp_use_tls = ${SMTP_USE_TLS:-no}" || exit 1
 
 # These are required.
 postconf "relayhost = ${SMTP_RELAY_HOST}" || exit 1
