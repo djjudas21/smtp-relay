@@ -1,11 +1,13 @@
-FROM alpine:3.19
+FROM alpine:3.20
 LABEL maintainer "Jonathan Gazeley"
 
 RUN apk add --no-cache postfix \
     && /usr/bin/newaliases
 
-COPY . /
+COPY smtp-relay.sh /
 
-EXPOSE 25
+COPY master.cf /etc/postfix/
+
+EXPOSE 2525
 
 ENTRYPOINT [ "/smtp-relay.sh" ]

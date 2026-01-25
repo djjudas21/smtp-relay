@@ -20,6 +20,7 @@ This image supports the following enironment variables. All are **required**.
 | `SMTP_RELAY_WRAPPERMODE`   | Request postfix connects using SUBMISSIONS/SMTPS protocol instead of STARTTLS | `no`            |
 | `SMTP_TLS_SECURITY_LEVEL`  | default SMTP TLS security level for the Postfix SMTP client         | `""`                      |
 | `SMTP_USE_TLS`             | Define TLS usage to secure communication between mail servers       | `no`                      |
+| `SMTP_MESSAGE_SIZE_LIMIT`  | default SMTP message_size_limit (Example: 10MB)      		           | `10240000`                |
 
 # Quickstart
 Run on docker
@@ -32,6 +33,7 @@ docker run --rm -it -p 2525:25 \
 	-e SMTP_RELAY_MYNETWORKS=127.0.0.0/8,10.0.0.0/8 \
 	-e SMTP_RELAY_WRAPPERMODE=no \
 	-e SMTP_TLS_SECURITY_LEVEL="" \
+	-e SMTP_MESSAGE_SIZE_LIMIT=10240000 \
 	djjudas21/smtp-relay
 
 ```
