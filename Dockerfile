@@ -1,4 +1,4 @@
-FROM alpine:3.20
+FROM alpine:3.23
 LABEL maintainer "Jonathan Gazeley"
 
 RUN apk add --no-cache postfix \
